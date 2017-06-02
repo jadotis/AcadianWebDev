@@ -1,17 +1,19 @@
 body {
-    padding-top: 50px;
+    padding: 50px;
+    background: #006bff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #006bff, #a2e6e4); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, dodgerblue, lightblue); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, dodgerblue, lightblue); /* For Firefox 3.6 to 15 */
 }
 nav{
     height: 7.8em;
+    box-shadow: 5px 4px 5px #000;
 }
 .container{
     width: 100%;
     height: 100%;
 }
-.starter-template {
-    padding: 40px 15px;
-    text-align: center;
-}
+/*NAVbar css for neatness */
 .navbar{
     background: -webkit-linear-gradient(left, blue, royalblue, lightblue);
     min-height:32px !important
@@ -30,7 +32,7 @@ nav{
     height: 100%;
 }
 #navbar>ul>li:hover{
-    background: slategray;
+    background: mediumblue;
 }
 #navbar>ul>li>a{
     font-size: large;
@@ -39,14 +41,62 @@ nav{
     text-align: center;
     height: 6em;
     min-height:20px;
-    color: #23527c;
+    color: white;
 }
 #navbar>ul>li>a:hover
 {
-    color: darkslategray;
+    color: gold;
 }
+#navbar>ul>#activePage{
+    background: mediumblue;
+}
+#navbar>ul>#activePage>a{
+    color:gold;
+}
+/*NAVbar css for neatness */
+
+
+
+/* Administrator panel */
 #Admin{
     position: absolute;
     right: 0em;
 }
+#Admin>a:visited{
+    color: gold;
+}
+#navbar>ul>#Admin:hover{
+    background: lightblue;
+}
+/* Administrator panel */
 
+/* dropDown Menu Config */
+#dropMenu{
+    position: absolute;
+    right: 10em;
+}
+#dropMenu>a:visited{
+    color: gold;
+}
+#dropMenu>a:hover{
+    background-color: lightblue;
+}
+
+#dropItems{
+    background-color: lightblue;
+}
+#navbar>ul>#dropMenu:hover{
+    background-color: lightblue;
+}
+/* dropDown Menu Config */
+
+#title{
+    position: absolute;
+    font-style: italic;
+    left: 84%;
+    top:-2%;
+    z-index: 1031;
+    text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0,0,5,1) 0 0px 10px;
+    font-size: xx-large;
+    color: goldenrod;
+}
