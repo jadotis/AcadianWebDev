@@ -2,34 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
     <!----Acadian Blue = #0072c6 --->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="James Otis" content="">
+    <meta author="James Otis" content="">
     <title>Acadian Site Template</title>
     <link rel="icon" type="image/x-icon" sizes="96x96" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon.ico?">
 
     <!-- Bootstrap core CSS -->
-    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <!---Basic StyleSheet for this dashboard--->
-    <link href="/stylesheets/template.css" rel="stylesheet">
+    <link href="stylesheets/template.css" rel="stylesheet">
     <!----StyleSheet for the ticketing table---->
-    <link href="/stylesheets/footprints.css" rel="stylesheet">
+    <link href="stylesheets/footprints.css" rel="stylesheet">
 
     <!-- HTML5 shim support for IE10--->
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-
-
-
-
 </head>
 
 <body>
@@ -53,11 +46,11 @@
                 <li><a href="index.html">Home</a></li>
                 <li id="activePage"><a href="footprints.html">Footprints</a></li>
                 <li><a href="deployments.html">Deployments</a></li>
-                <li id="Admin"><a href="#">Administrator</a></li>
+                <li id="Admin"><a style="color: gold;" href="admin.html" style="color:gold">Administrator</a></li>
                 <!---Dropdown bar---->
-                <li id="dropMenu" class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">QuickLinks <b class="caret"></b></a>
-                    <ul id="dropItems" class="dropdown-menu">
+                <li id="dropMenu" class="dropdown" >
+                    <a style="color:gold" href="#" class="dropdown-toggle" data-toggle="dropdown">QuickLinks <b class="caret"></b></a>
+                    <ul id="dropItems" class="dropdown-menu" >
                         <li><a href="http://bos-vppm01/vppm/login.cfm">TAPS</a></li>
                         <li><a href="http://bos-buildlin01:8153/go/pipelines">GoCD</a></li>
                         <li><a href="https://consul.service.dev.acadian-asset.com">Consul</a></li>
