@@ -76,17 +76,16 @@
 <!----Begin the container for the form---->
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-        <fieldset>
+    <form class="well form-horizontal"  id="contact_form">
             <!-- Text input-->
             <legend>Deployment form</legend>
 
             <div class="form-group">
                 <label class="col-md-2 control-label">Username</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="first_name" placeholder="username: ie: jsmith" class="form-control"  type="text">
+                        <input  name="login" placeholder="username: ie: jsmith" class="form-control"  type="text">
                     </div>
                 </div>
             </div>
@@ -95,10 +94,10 @@
 
             <div class="form-group">
                 <label class="col-md-2 control-label" >Password</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input name="last_name" placeholder="password" class="form-control"  type="password">
+                        <input name="password" placeholder="password" class="form-control"  type="password">
                     </div>
                 </div>
             </div>
@@ -106,7 +105,7 @@
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-2 control-label">E-Mail</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                         <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
@@ -120,10 +119,10 @@
 
             <div class="form-group">
                 <label class="col-md-2 control-label">Source Path</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
-                        <input name="phone" placeholder="C:\Windows\Users\jsmith" class="form-control" type="text">
+                        <input name="srcPath" placeholder="C:\Windows\Users\jsmith" class="form-control" type="text">
                     </div>
                 </div>
             </div>
@@ -132,10 +131,10 @@
 
             <div class="form-group">
                 <label class="col-md-2 control-label">Destination Path</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-folder-close"></i></span>
-                        <input name="address" placeholder="Z:\SomeServer\jsmith" class="form-control" type="text">
+                        <input name="destPath" placeholder="Z:\SomeServer\jsmith" class="form-control" type="text">
                     </div>
                 </div>
             </div>
@@ -144,48 +143,54 @@
 
             <div class="form-group">
                 <label class="col-md-2 control-label">File Structure</label>
-                <div class="col-md-2 selectContainer">
+                <div class="col-md-3 selectContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
-                        <select name="city"  class="form-control selectpicker">
+                        <select name="fileInfo"  class="form-control selectpicker">
                             <option value = "">FileType</option>
-                            <option>Single File</option>
-                            <option>Folder</option>
+                            <option>File</option>
+                            <option>Directory</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label">Server Name or IP</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-hdd"></i></span>
-                        <input name="address" placeholder="BOS-SMITH-D7" class="form-control" type="text">
+                        <input name="server" placeholder="BOS-SMITH-D7" class="form-control" type="text">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-2 control-label">Description</label>
-                <div class="col-md-2 inputGroupContainer">
+                <div class="col-md-3 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                        <textarea class="form-control" name="comment" placeholder="Ex: Moving NuGet packages to DB01"></textarea>
+                        <textarea id = "textarea" class="form-control" name="description" placeholder="Ex: Moving NuGet packages to DB01"></textarea>
                     </div>
                 </div>
             </div>
 
-            <!-- Success message -->
-            <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-2 control-label"></label>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary"  onclick="formValidate();" >Send <span class="glyphicon glyphicon-send"></span></button>
                 </div>
             </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <div id= "errorString" class="error-msg">
+                </div>
+                <div id ="successMessage" class="alert alert-success">
+                    <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+                </div>
+            </div>
+        </div>
 
-        </fieldset>
     </form>
 </div>
 </div><!-- /.container -->
