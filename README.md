@@ -19,7 +19,7 @@ The build script will also check for an installation of node.
 from the source directory run node .\bin\www or the equivalent in
 bash ./bin/www
 
-## ToDo
+## Continued tasks
 
 1. Business logic for DBs and Footprints
 2. Fix the webform to include the proper field checking for forms
@@ -27,9 +27,4 @@ bash ./bin/www
 4. Add functionality and CSS
 5. Figure out how to affix the 'Release Engineering' tag to the top of the Navbar
 
-## License
 
-TODO: Write license
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
