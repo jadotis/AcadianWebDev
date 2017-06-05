@@ -16,6 +16,8 @@ app.use(session({
     cookie: {secure: false},
     access_token: null
 }));
+//DB for footprints = Bos-footdev01;
+
 
 
 app.use(body_parser.urlencoded({extended : false}));

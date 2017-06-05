@@ -25,12 +25,13 @@ Write-Host "Beginning to install the dependencies for the project";
 npm install body-parser --save
 npm install cookie-parser --save
 npm install express --save
-npm install express session --save
+npm install express-session --save
 npm install handlebars --save
 npm install morgan --save
 npm install pug --save
 npm install request --save
 npm install serve-favicon --save
+npm install debug --save
 
 
 

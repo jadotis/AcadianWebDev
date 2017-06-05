@@ -5,16 +5,13 @@
     0px 20px 2px rgba(0,0,0,0.1),
     0px 30px 30px rgba(0,0,0,0.1);
 }
-
-
-
 #DeployDisplay{
     position: relative;
     margin-top: 6em;
 
 }
 
-#myInput {
+#searchbar {
     background-image: url("../img/searchicon.png"); /* Add a search icon to input */
     background-size: 32px 32px;
     background-position: 6px 7px; /* Position the search icon */
@@ -31,8 +28,15 @@
 #myTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
     font-size: 18px; /* Increase font-size */
+}
+#topleft {
+    border-top-left-radius: 25px;
+    border: none;
+}
+#topright {
+    border-top-right-radius: 25px;
+    border-right: none;
 }
 
 #myTable th, #myTable td {
@@ -40,10 +44,11 @@
     padding: 12px; /* Add padding */
 }
 
-#myTable tr {
+#myTable td {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd;
-    border-radius: 20px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
 }
 
 #myTable tr.header, #myTable tr:hover {
