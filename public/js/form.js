@@ -35,7 +35,11 @@ function formValidate(){
     errorMessage= "";
 
     /* type checking on boxes */
-    
+    if(email.indexOf('@') == -1){
+        errorMessage = "Enter a valid Email Address";
+        renderError(errorMessage);
+        throw '';
+    }
 
 
 

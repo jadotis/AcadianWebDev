@@ -33,6 +33,9 @@ npm install pug --save
 npm install request --save
 npm install serve-favicon --save
 npm install debug --save
+npm install mssql --save
+npm install activedirectory --save
+npm install msnodesqlv8 --save
 
 
 Write-Host "Dependencies built correctly, please build the project"
