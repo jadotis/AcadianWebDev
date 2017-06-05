@@ -10,6 +10,13 @@ Any missing dependencies (between versions) can be installed with:
 "npm install <package name> --save"
 ***Ensure that you are in the folder with the package.json"
 The build script will also check for an installation of node.
+
+If you are running on a computer without PowerShell you can still install
+the dependencies by running the npm commands from Bash. 
+***Please Do this at your own risk ***
+These commands can be found at the latter part of the included
+build.ps1 script.
+
 ```
 ## Usage
 ```
