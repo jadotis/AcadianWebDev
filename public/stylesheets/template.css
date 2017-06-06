@@ -1,9 +1,9 @@
 body {
     padding: 50px;
-    background: #006bff; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left top, #006bff, #a2e6e4); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, dodgerblue, lightblue); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, dodgerblue, lightblue); /* For Firefox 3.6 to 15 */
+    background: #0072c6; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #006bff, #0072c6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #0072c6, #0072c6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #0072c6, #0072c6); /* For Firefox 3.6 to 15 */
 }
 nav{
     height: 7.8em;
@@ -15,7 +15,7 @@ nav{
 }
 /*NAVbar css for neatness */
 .navbar{
-    background: -webkit-linear-gradient(left, blue, royalblue, lightblue);
+    background: -webkit-linear-gradient(left,#0072c6, darkblue);
     min-height:32px !important
 }
 #navbar{
@@ -32,7 +32,7 @@ nav{
     height: 100%;
 }
 #navbar>ul>li:hover{
-    background: mediumblue;
+    background: #0072c6;
 }
 #navbar>ul>li>a{
     font-size: large;
@@ -48,7 +48,7 @@ nav{
     color: gold;
 }
 #navbar>ul>#activePage{
-    background: mediumblue;
+    background: #0072c6;
 }
 #navbar>ul>#activePage>a{
     color:gold;
@@ -66,7 +66,7 @@ nav{
     color: gold;
 }
 #navbar>ul>#Admin:hover{
-    background: lightblue;
+    background: #0072c6;
 }
 /* Administrator panel */
 
@@ -79,11 +79,11 @@ nav{
     color: gold;
 }
 #dropMenu>a:hover{
-    background-color: lightblue;
+    background-color: #0072c6;
 }
 
 #dropItems{
-    background-color: lightblue;
+    background-color: #0072c6;
 }
 #navbar>ul>#dropMenu:hover{
     background-color: lightblue;

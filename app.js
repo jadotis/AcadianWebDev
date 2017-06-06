@@ -41,7 +41,10 @@ conn.connect(function(err){
    }
 });
 
-
+app.post('/onload', function(req, res){
+    console.log('test');
+    res.end(); // end the response
+});
 
 
 app.use(body_parser.urlencoded({extended : false}));
