@@ -13,10 +13,12 @@ window.onload = function() {
         success: function (response) {
             console.log(response);
             table = DBtable.responseText;
+            debugger;
         },
         error: function(err){
             console.log(err);
             table = "";
         }
     });
+
 }

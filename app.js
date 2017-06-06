@@ -11,6 +11,7 @@ var favicon = require('serve-favicon');
 var path = require('path');
 const sql = require("mssql/msnodesqlv8");
 // /require("msnodesqlv8");
+var returnValue = '';
 const conn = new sql.ConnectionPool({
     Provider : "SQLOLEDB",
     database: "Footprints",
@@ -29,21 +30,22 @@ conn.connect(function(err){
    {
        console.log("Connected");
        const request = new sql.Request(conn);
-       myQuery = request.query('select top 100 * from dbo.MASTER2vIssueActivityFact', function(err,result){
+       var myQuery = request.query('select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 order by mrSUBMITDATE desc;', function(err,result){
            if(err){
                console.log(err);
            }
            else{
-               console.log(result); //This is correct
+               returnValue = result;
            }
        });
-       console.log(myQuery);
+       returnValue = myQuery;
    }
 });
 
 app.post('/onload', function(req, res){
     console.log('test');
-    res.end(); // end the response
+    console.log(returnValue);
+    res.send(returnValue); // end the response
 });
 
 
