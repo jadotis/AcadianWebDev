@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!----Acadian Blue = #0072c6 --->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,30 +13,29 @@
 
     <!-- Bootstrap core CSS -->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-    <!---Basic StyleSheet for this dashboard--->
+    <!---Basic StyleSheet for Theme--->
     <link href="stylesheets/template.css" rel="stylesheet">
-    <!----StyleSheet for the ticketing table---->
-    <link href="stylesheets/footprints.css" rel="stylesheet">
+    <!----StyleSheet for this page---->
+    <link href="stylesheets/main.css" rel="stylesheet">
 
     <!-- HTML5 shim support for IE10--->
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
-
 <body>
-
 <nav class="navbar navbar-inverse navbar-fixed-top ">
     <div class="container">
         <div class="navbar-header">
             <!---Button is connected only on small screen sizes--->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="http://www.acadian-asset.com">
-                <img src="img/AcadianWhite.gif" width="92em" height="85em"  >
+                <img src="img/AcadianWhite.gif" width="92em" height="85em">
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -46,11 +43,11 @@
                 <li id="activePage"><a href="index.html">Home</a></li>
                 <li><a href="footprints.html">Footprints</a></li>
                 <li><a href="deployments.html">Deployments</a></li>
-                <li id="Admin"><a  href="admin.html" >Administrator</a></li>
+                <li id="Admin"><a href="admin.html">Administrator</a></li>
                 <!---Dropdown bar---->
-                <li id="dropMenu" class="dropdown" >
+                <li id="dropMenu" class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">QuickLinks <b class="caret"></b></a>
-                    <ul id="dropItems" class="dropdown-menu" >
+                    <ul id="dropItems" class="dropdown-menu">
                         <li><a href="http://bos-vppm01/vppm/login.cfm">TAPS</a></li>
                         <li><a href="http://bos-buildlin01:8153/go/pipelines">GoCD</a></li>
                         <li><a href="https://consul.service.dev.acadian-asset.com">Consul</a></li>
@@ -65,17 +62,183 @@
         </div>
     </div>
 </nav>
-
 <!---Title in top right corner---->
-<div class="container">
+<div id="contentContainer" class="container">
     <div class="starter-template">
-        <h1 id="title" >Release Engineering</h1>
+        <h1 id="title">Release Engineering</h1>
     </div>
 </div>
 <div id="content" class="container">
-    <h1> This is the footprints page that is under construction</h1>
+    <!---Can change the opacity value here for a darker/lighter color scheme--->
+    <div class="col-md-9" style="background-color: rgba(169,169,169, 1.0); border-radius: 20px;">
+        <h3 style="color:  #0f5279;"><strong>Why Implement a Managed Release Cycle (MRC)</strong></h3>
+        <p style="text-align: justify">&emsp; The purpose of implementing a regular release cycle is to increase the
+            stability
+            of the production environment and provide better visibility into exactly what is going to change and when.
+            An effective release management process allows IT to improve the speed and quality
+            of changes to the production environment and to better organize the allocation of dedicated
+            resources committed to oversee the integration of changes to our environment.</p>
+        <p style="text-align: justify">&emsp;As part of this process change all deployments that are not urgent should
+            be shifted toward the Managed Release Cycle.
+            Project work that requires an exception to the process for some reason (e.g. vendor schedules, weekend only
+            upgrades, etc.)
+            should be brought to the attention of the Release Management Team&nbsp;(<a style="color: darkblue;"
+                                                                                       href="mailto:ReleaseManagement@Acadian-asset.com">
+                <span style="text-decoration:underline;">ReleaseManagement@Acadian-asset.com</span></a>
+            ) for scheduling.&nbsp;&nbsp;&nbsp;
+        </p>
+        <p style="text-align: justify">
+            &emsp;Included with initiative to move to a managed deployment cycle and the recent organizational changes
+            to IT development teams, we have realigned the
+            managers who can Manager Approve business side FootPrint tickets. Going forward the approvals will be done
+            by Jim Soper, Sarath Akkineni,
+            and John King as they are the managers closest to the business projects and development processes.
+        </p>
+        <h3 style="color: #0f5279;"><strong>Exceptions to the MRC process:</strong></h3>
+        <ul style="list-style: disc">
+            <li>The following Footprints will <strong style="color: #0f5279">NOT</strong> Be subject ot the MRC process:
+            </li>
+            <ul style="list-style: circle">
+                <li>Any fix for an Urgent issue that is affecting our ability to do business</li>
+                <li>Any fix to data quality that is likely to cause inaccuracies or errors with our processes</li>
+                <li>New User creation, additional user permissions, or application access</li>
+            </ul>
+            <li>The <strong style="color: #0f5279">Data - Data Modification/Updates</strong> Footprint category
+                should be used only for Footprints that are correcting a <strong style="color: #0f5279">data quality
+                    issue</strong>
+                . Missing, incorrect, or duplicate data that needs to be corrected ASAP due to potential business impact
+                and can be corrected with a SQL script. Footprints
+                that are changing application behavior but require nothing but a SQL script <strong
+                        style="color: #0f5279; text-decoration: underline">should not</strong>
+                be set to <strong style="color: #0f5279"> Data - Data Modification/Updates</strong>.
+            </li>
+        </ul>
+        <h3 style="color: #0f5279;"><strong>Key Points:</strong></h3>
+        <ul style="list-style: disc">
+            <li>Any Footprint which causes an adverse impact to the production environment will be rolled back and set
+                to "<strong style="color: #0f5279;">Assigned</strong>" status.
+                These tickets will need to go through the normal release cycle process again to become candidates for
+                the next scheduled MRC deployment.
+            </li>
+            <li>Some Footprints approved for MRC deployment may be deployed after the standard MRC release day if there
+                is a business constraint.
+            </li>
+            <li>Whether an exception to MRC or not, all Footprints should receive some measure of QA review. This can be
+                accomplished through formal QA
+                by that team or as a peer review but a second set of eyes should verify that everything is in order
+                before the Footprint is Manager Approved
+            </li>
+        </ul>
+        <h3 style="color: #0f5279;"><strong>What is the Release Schedule?</strong></h3>
+        <ul style="list-style: disc;">
+            <li><strong style="color: #0f5279;">Monday Afternoon</strong> - Deployment Candidate pipeline Meeting</li>
+            <ul style="list-style: circle;">
+                <li>Overview of the tickets in the pipeline</li>
+                <li>Establish Level of Effort (LOE) for deployment</li>
+                <li>LOE Status
+                    <ul style="list-style: square">
+                        <li>Large – Dev Complete by EOD Tuesday</li>
+                        <li>Medium – Dev Complete by EOD Wednesday</li>
+                        <li>Small – Dev Complete by EOD Thursday</li>
+                    </ul>
+                </li>
+                <li>Footprints that are not set to Dev Complete status by the assigned cutoff will need to wait until
+                    the next MRC
+                </li>
+            </ul>
+            <li><strong style="color: #0f5279;">Friday - 5PM</strong>
+                <ul style="list-style: circle">
+                    <li>All tickets must be QA Approved for release on Tuesday</li>
+                </ul>
+            </li>
+            <li><strong style="color: #0f5279;">Friday - 6PM</strong>
+                <ul style="list-style: circle">
+                    <li>An automated report will be sent to all of IT with the list of all tickets that qualify for the
+                        following Tues MRC deployment
+                    </li>
+                </ul>
+            </li>
+            <li><strong style="color: #0f5279;">Monday</strong>
+                <ul style="list-style: circle">
+                    <li>PSG and DBOps will ensure that all tickets are ready for deployment on Monday.</li>
+                    <li>Once verified a spreadsheet named <i>"Release Candidates ddMMMyy.xlsx"</i> will be created and
+                        posted to this site
+                    </li>
+                </ul>
+            </li>
+            <li><strong style="color: #0f5279;">Tuesday</strong>
+                <ul style="list-style: circle">
+                    <li>PSG, DBOps, and SrvOps will meet and discuss the deployment schedule for the day</li>
+                    <li>An email will be sent from Release Management when deployment starts</li>
+                    <li>A follow-up email will be sent when deployments have been completed</li>
+                    <li>An updated spreadsheet, <i>"released tickets ddMMMyy.xlxs"</i>, will be posted to the SharePoint
+                        site.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h3 style="color: #0f5279;"><strong>What if there is an office closure due to Holiday?</strong></h3>
+        <ul style="list-style: disc;">
+            <li>In the event of a Monday office closure all key dates remain unchanged <strong
+                    style="color: #0f5279; text-decoration: underline;">except</strong> the release date will be on Weds
+            </li>
+            <li>In the event of a Friday office closure all key dates remain the same.</li>
+            <li>All other scheduled office closures will be handled ad-hoc and communicated by Release Management to all
+                involved two weeks prior to the event.
+            </li>
+        </ul>
+        <h3 style="color: #0f5279;"><strong>What is the Release Process?</strong></h3>
+        <p>&emsp;We already have a Footprints process that we are accustomed to using and as we move to a Managed Release
+            Cycle we are leveraging that existing procedures with some minor changes.  With these changes the new workflow is as follows:
+        </p>
+        <ul style="list-style: decimal;">
+            <li>Users, BSA/ PMs and developers are encouraged to enter the Target Date field.
+                <ul style="list-style: square;">
+                    <li>In the case of an urgent hotfix or data update script that must be run ASAP this date will
+                        be the same day.
+                    </li>
+                    <li>If the Footprint is not an urgent data update or urgent fix then the Target Date should be
+                        set to the appropriate Tuesday.
+                    </li>
+                    </li>
+                </ul>
+            </li>
+            <li>If there are any steps for DBOps to execute then DB Review Required has to be selected; no exceptions.
+            </li>
+            <li>DBOps will notify PSG if there are any steps for them and wait for their "OK" before DBA Approving.
+                (This is required due to a lack of a "PSG Approval" step in the Footprints workflow)
+            </li>
+            <li>QA will wait until after DBA Approval before setting QA Approved.</li>
+            <li>QA Approval must be complete by <strong style="color: #0f5279;"> 5:00 pm on Fridays </strong>for any
+                ticket to be deployed on the following Tuesday.
+            </li>
+            <li>At 6:00 pm on Fridays, a report of the eligible tickets will be generated, e-mailed to all of IT. Once
+                reviewed and annotated, it will be uploaded to the SharePoint site
+                <a href="https://spteam.acadian-asset.com/IT/SitePages/ReleaseManagement.aspx">here</a>. **Only the PSG
+                and DBOps Managers will edit the release management spreadsheet/report.
+            </li>
+            <li>Everyone with tickets that are expected to be released should review this list to ensure a ticket is not
+                missed.
+            </li>
+            <li>Managers will Manager Approve as their schedule permits. When they review tickets, where necessary, they
+                will add or update the Target Date field before clicking the approval button.
+            </li>
+            <li>Footprints are released by the Release Management team members according to their Target Dates and
+                relative priorities.
+            </li>
+        </ul>
+        <h3 style="color: #0f5279;"><strong>What to do if a ticket is an emergency?</strong></h3>
+        <p>&emsp;In the event that there is an immediate need to correct an issue in the production environment the Footprint should be marked with priority of <strong style="color: #0f5279">Urgent</strong>.
+            The existing release process will take effect and Release Management staff will be paged to make them aware of the issue.
+            Urgent Footprints are treated as a "drop what you're doing" situation so please keep this in mind when using this priority setting.</p>
+        <h3 style="color: #0f5279;"><strong>What to do if a ticket is not an emergency but needs to be deployed ASAP to prevent it from becoming an emergency?</strong></h3>
+        <p>&emsp; There will be times when a condition exists that we know is going to become an emergency; e.g. bad/missing data, incorrect results appearing on a report, etc.
+            These <strong style="color: #0f5279;">hotfix</strong> situations should have the business reason the ticket needs to go out of cycle in the description.
+        </p>
+    </div>
 </div>
 
+<footer style="text-align: center">&copy Acadian Asset Management, Inc. 2007. All rights reserved </footer>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -85,9 +248,9 @@
 <script src="/js/bootstrap.min.js"></script>
 <!----Button Hover javascript for bootstrap --->
 <script type="text/javascript">
-    $('ul.nav li.dropdown').hover(function() {
-        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(500);
-    }, function() {
+    $('ul.nav li.dropdown').hover(function () {
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(200);
+    }, function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
     });
 </script>
