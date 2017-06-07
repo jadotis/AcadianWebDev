@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<html ng-app="dashboard">
 <head>
     <!----Acadian Blue = #0072c6 --->
     <meta charset="utf-8">
@@ -23,7 +24,12 @@
     <!-- HTML5 shim support for IE10--->
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="js/footprintsRes.js" type="text/javascript"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angularDisplay.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -39,7 +45,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="http://www.acadian-asset.com">
-                <img src="img/AcadianWhite.gif" width="100%" height="100%" >
+                <img src="img/AcadianWhite.gif" width="92em" height="85em" >
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -74,10 +80,10 @@
     </div>
 </div>
 
-<div id="DeployDisplay" class="container">
+<div id="DeployDisplay" class="container" ng-controller="mappings">
     <h1 id="myDeploys">Today's Deployments:</h1>
     <!----This is a shell for displaying tickets, there should not be any functionality--->
-    <input type="text" id="searchbar" onkeyup="tableQuery()" placeholder="Search for a deployment">
+    <input type="text" id="searchbar" onkeyup="populateTable()" placeholder="Search for a deployment">
     <!----Will need to insert a search filtering parameter here in order to get the right results--->
 
 
@@ -89,25 +95,91 @@
             <th style="width:70%;">Title</th>
             <th id = "topright" style="width:10%;">Target Date</th>
         </tr>
-        <tr>
-            <td>88268</td>
+        <tr id="1table">
+            <td>{{first[0]}}</td>
+            <td>{{first[1]}}</td>
+            <td>{{first[2]}}</td>
+            <td>{{first[3]}}</td>
+        </tr>
+        <tr id="2table" >
+            <td>{{second[0]}}</td>
+            <td>{{second[1]}}</td>
+            <td>{{second[2]}}</td>
+            <td>{{second[3]}}</td>
+        </tr>
+        <tr id="3table">
+            <td>{{third[0]}}</td>
+            <td>{{third[0]}}</td>
+            <td>{{third[0]}}</td>
+            <td>{{third[0]}}</td>
+        </tr>
+        <tr id="4table">
+            <td>{{fourth[0]}}</td>
+            <td>{{fourth[0]}}</td>
+            <td>{{fourth[0]}}</td>
+            <td>{{fourth[0]}}</td>
+        </tr>
+        <tr id="5table">
+            <td>{{fifth[0]}}</td>
+            <td>{{fifth[0]}}</td>
+            <td>{{fifth[0]}}</td>
+            <td>{{fifth[0]}}</td>
+        </tr>
+        <tr id="6table">
+            <td>23423</td>
             <td>Approved</td>
-            <td>Migrate DLC jobs away from BOSAPPLIN01</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
             <td>5/30/2017</td>
         </tr>
-        <tr>
-            <td>88624</td>
+        <tr id="7table">
+            <td>23423</td>
             <td>Approved</td>
-            <td>Please add updated version of stored procedure RawData.dbo.SPsmfAutoAddGetFundsRawData to BOS-DBCORE01</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
             <td>5/30/2017</td>
         </tr>
-        <tr>
-            <td>89234</td>
+        <tr id="8table">
+            <td>23423</td>
             <td>Approved</td>
-            <td>Decommission old performance attribution and asset detail pages</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
             <td>5/30/2017</td>
         </tr>
-        <tr>
+        <tr id="9table">
+            <td>23423</td>
+            <td>Approved</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
+            <td>5/30/2017</td>
+        </tr>
+        <tr id="10table">
+            <td>23423</td>
+            <td>Approved</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
+            <td>5/30/2017</td>
+        </tr>
+        <tr id="11table">
+            <td>23423</td>
+            <td>Approved</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
+            <td>5/30/2017</td>
+        </tr>
+        <tr id="12table">
+            <td>23423</td>
+            <td>Approved</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
+            <td>5/30/2017</td>
+        </tr>
+        <tr id="13table">
+            <td>23423</td>
+            <td>Approved</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
+            <td>5/30/2017</td>
+        </tr>
+        <tr id="14table">
+            <td>23423</td>
+            <td>Approved</td>
+            <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
+            <td>5/30/2017</td>
+        </tr>
+        <tr id="15table">
             <td>23423</td>
             <td>Approved</td>
             <td>Decommission MSCI Daily (Old) Page and change link for FX page</td>
@@ -119,15 +191,8 @@
 
 
 
+
 </div>
-
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <!----Button Hover javascript for bootstrap --->
 <script type="text/javascript">
     $('ul.nav li.dropdown').hover(function() {
@@ -136,8 +201,6 @@
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
     });
 </script>
-<!----Javascript for manipulating the table---->
-<script src="js/table.js"></script>
 
 </body>
 </html>

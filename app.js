@@ -30,7 +30,8 @@ conn.connect(function(err){
    {
        console.log("Connected");
        const request = new sql.Request(conn);
-       var myQuery = request.query('select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 order by mrSUBMITDATE desc;', function(err,result){
+       var myQuery = request.query("select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where mrSTATUS != '_INACTIVE_' AND Target__bDate not like 2017 order by mrSUBMITDATE desc;"
+       , function(err,result){
            if(err){
                console.log(err);
            }
@@ -44,6 +45,7 @@ conn.connect(function(err){
 
 app.post('/onload', function(req, res){
     console.log('test');
+
     console.log(returnValue);
     res.send(returnValue); // end the response
 });
