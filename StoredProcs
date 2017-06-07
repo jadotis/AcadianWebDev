@@ -1,1 +1,6 @@
 select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 order by mrSUBMITDATE desc;
+
+
+select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where mrSTATUS != '_INACTIVE_' AND 
+Target__bDate not like 2017
+ order by mrSUBMITDATE desc;
