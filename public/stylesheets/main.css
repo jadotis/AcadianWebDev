@@ -1,0 +1,72 @@
+﻿#content{
+    position: relative;
+    margin-top: 5em;
+    right: 4em;
+}
+#sidebar{
+    border-radius: 20px;
+    background: -webkit-linear-gradient(left, rgba(15, 82, 121, .60) 10% , #0f5279 90%);
+    position: fixed;
+    top: 11.5%;
+    left: 71%;
+    width: 39em;
+    height: 62.8em;
+    text-wrap: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+table{
+    width:20%;
+    table-layout: fixed;
+    position: fixed;
+    top: 11em;
+}
+
+
+th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 300;
+    font-size: 18px;
+    color: gold;
+}
+td{
+    padding: 8px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    overflow: hidden;
+    color: gold;
+    border-bottom: solid 1px rgba(170,170,170, 1.0);
+}
+tr:hover{
+    background-color: #245269;
+}
+
+#ticketInven{
+    position: fixed;
+    top: 3em;
+    right: 4em;
+    z-index: 2000;
+}
+
+.input-group{
+    position: fixed;
+    top: 67.5em;
+    right: 4em;
+}
+button{
+    border: solid 2px white;
+    width: 8em;
+}
