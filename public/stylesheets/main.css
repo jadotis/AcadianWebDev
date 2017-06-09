@@ -2,7 +2,13 @@
     position: relative;
     margin-top: 5em;
     right: 4em;
+
 }
+#contentBox{
+    box-shadow: 5px 4px 5px #005479;
+}
+
+
 #sidebar{
     border-radius: 20px;
     background: -webkit-linear-gradient(left, rgba(15, 82, 121, .60) 10% , #0f5279 90%);
@@ -12,6 +18,7 @@
     width: 39em;
     height: 62.8em;
     text-wrap: none;
+    box-shadow: 5px 4px 5px black;
 }
 
 ::-webkit-scrollbar {
@@ -53,6 +60,7 @@ td{
 tr:hover{
     background-color: #245269;
 }
+
 
 #ticketInven{
     position: fixed;

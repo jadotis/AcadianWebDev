@@ -10,11 +10,9 @@ app.controller('ticketController', function ($scope, $element, $timeout, $http) 
         }).error(function (error) {
             console.log(error);
     });
-    debugger;
-
     console.log($scope.result);
 
-
+    /*Database call to update page if remaining static */
     $scope.update = function(){
         $http.get(baseUrl + "/tickets")
             .success(function (data) {
@@ -24,8 +22,5 @@ app.controller('ticketController', function ($scope, $element, $timeout, $http) 
         });
 
     }
-
-
-
 });
 
