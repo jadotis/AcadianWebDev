@@ -13,7 +13,7 @@ const sql = require("mssql/msnodesqlv8");
 // /require("msnodesqlv8");
 var returnValue = '';
 const conn = new sql.ConnectionPool({
-    Provider : "SQLOLEDB",
+    Provider: "SQLOLEDB",
     database: "Footprints",
     server: "bos-footdev01",
     driver: "msnodesqlv8",
@@ -26,9 +26,9 @@ const conn = new sql.ConnectionPool({
 //const request = new sql.Request(conn);
 //var myQuery = request.query("select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where mrSTATUS != '_INACTIVE_' AND Target__bDate not like 2017 order by mrSUBMITDATE desc;"
 //    , function (err, result) {
- //       if (err) {
- //           console.log(err);
- //       }
+//       if (err) {
+//           console.log(err);
+//       }
 //        else {
 //            returnValue = result;
 //        }
@@ -39,52 +39,86 @@ const conn = new sql.ConnectionPool({
 function DBconnect() {
     conn.connect(function (err) {
         if (err) {
-            console.log( "error");
+            console.log("error");
         }
         else {
-            console.log( "success");
+            console.log("success");
 
         }
     });
 }
 DBconnect();
-function DBclose(){
+function DBclose() {
     conn.close();
 }
 
 
 /* Routes */
 
-
-//app.get('/onload', function(req, res){
-//    console.log('test');
-//    res.send(returnValue); // end the response
-//});
-
-app.get('/tickets', function (req,res) {
-    console.log('hit route /tickets');
+/* The route for the deployment page to generate the ticket list */
+app.get('/footprints', function (req, res) {
+    var searchParameter = '';
+    var queryString = req.query.query;
     const request = new sql.Request(conn);
-    var myQuery = request.query("select top 20 mrID, mrTITLE, mrSTATUS  from dbo.MASTER2 where mrSTATUS != '_INACTIVE_'  order by mrID desc;",
-        function(err, result){
-        if(err){
-            console.log(err);
-            res.send(err);
-        }
-        else {
-            console.log(result.recordset);
-            res.send(result.recordset);
-        }
-    });
+    console.log(req.query.option);
+    console.log(req.query.query);
+    switch (req.query.option) {
+        case 'Status': searchParameter = 'mrSTATUS'; break;
+        case 'FP Number': searchParameter = 'mrID'; break;
+        case 'Date': searchParameter = 'Target__bDate'; break;
+        case 'Keyword': searchParameter = 'mrTITLE'; break;
+        case '': break;
+    }
+    console.log(searchParameter);
+    var sqlRequest = "select mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ searchParameter + " like " + "'" + queryString + "';";
+    if( searchParameter == 'mrTITLE'){
+        sqlRequest = "select mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ "CONTAINS(mrTITLE,'" + queryString +"')";
+    }
+    if( searchParameter == 'Target__bDate') {
+        sqlRequest = "select mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where CONTAINS(CONVERT(VARCHAR(10), Target__bDate),'" + queryString +"')";
+    }
+    console.log(sqlRequest);
+    var myQuery = request.query(sqlRequest,
+        function (err, result) {
+            if (err) {
+                console.log(err);
+                res.send(err);
+            }
+            else {
+                console.log(result.recordset);
+                res.send(result.recordset);
+            }
+        });
 });
 
 
 
 
-app.use(body_parser.urlencoded({extended : false}));
+
+
+/*Ticket route for the home page sideboard */
+app.get('/tickets', function (req, res) {
+    console.log('hit route /tickets');
+    const request = new sql.Request(conn);
+    var myQuery = request.query("select top 20 mrID, mrTITLE, mrSTATUS  from dbo.MASTER2 where mrSTATUS != '_INACTIVE_'  order by mrID desc;",
+        function (err, result) {
+            if (err) {
+                console.log(err);
+                res.send(err);
+            }
+            else {
+                console.log(result.recordset);
+                res.send(result.recordset);
+            }
+        });
+});
+
+
+app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser({limit: '50mb'}));
 app.use(body_parser.json());
 app.use(express.static(__dirname + '/public')).use(cookieParser());
-app.use(favicon(path.join(__dirname, 'public' ,'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 module.exports = app;
 

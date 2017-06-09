@@ -106,7 +106,7 @@ table
 
 td, th
 {
-    padding: 16px;
+    padding: 1.3em;
     line-height: 2.2em;
     font-weight: 300;
 }
@@ -119,6 +119,7 @@ thead
 
 th
 {
+    text-align: center;
     border-bottom: 0;
     color: white;
     color: #444;
@@ -135,7 +136,7 @@ tbody
 {
     width: 100%;
     overflow: auto;
-    height: 200px;
+    height: 5em;
     display: block;
 }
 
@@ -144,7 +145,7 @@ tr:nth-child(even)
     background: rgba(255, 255, 255, 0.15);
 }
 
-tr td:first-child
+tr td:nth-child(2)
 {
     font-weight: bold;
 }

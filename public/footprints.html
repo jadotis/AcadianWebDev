@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta author="James Otis" content="">
-    <title>Acadian Site Template</title>
+    <title>Acadian Footprints</title>
     <link rel="icon" type="image/x-icon" sizes="96x96" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon.ico?">
@@ -31,6 +31,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/footprintController.js" type="text/javascript"></script>
 </head>
+
+<!----https://helpdesk.acadian-asset.com/MRcgi/MRlogin.pl?DL=88581DA2 --->
+
 
 <body>
 
@@ -81,11 +84,11 @@
 </div>
 <form id="searchbar" class="form-inline col-lg-12" style="background-color: #0f5279">
     <div class="input-group" >
-        <input ng-model="queryString" type="text" class="form-control" id="inlineFormInputGroup" style="font-size: .8em;"
+        <input maxlength="50" ng-model="queryString" type="text" class="form-control" id="inlineFormInputGroup" style="font-size: .8em;"
                placeholder="Search for a Deployment....">
     </div>
     <div id="searchbarInteractive" ng-controller="footprintController">
-        <select ng-model="selectedOption" class="selectpicker" >
+        <select id="selectbar" ng-model="selectedOption" class="selectpicker" >
             <option>FP Number</option>
             <option>Status</option>
             <option>Date</option>
@@ -99,18 +102,17 @@
 <table>
     <thead>
     <tr>
-        <th>FP Number</th>
-        <th>Status</th>
-        <th>Description</th>
-        <th>Target Date</th>
+        <th style="width: 20%">FP Number</th>
+        <th style="width: 20%">Status</th>
+        <th style="width: 50%">Description</th>
+        <th style="width: 10%">Target Date</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Developed</td>
-        <td>1995</td>
-        <td>1987</td>
-        <td></td>
+    <td style="width: 20%">54645</td>
+    <td style="width: 20%">Approved</td>
+    <td style="width: 50%">This is a sample description to fill in this field and check for overflow if there is overflow then there should be an elipses otherwise there should not be anything else that should appear within this tag. The rest of this sentence is just going to be fiuller so that we can check whether or not this is a working tag because I am being really thorough </td>
+    <td style="width: 10%">Target Date</td>
     </tr>
     </tbody>
 </table>
@@ -129,6 +131,17 @@
     }, function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
     });
+
+    //This is not working to update the placeholder
+    $('select').on('change',function(){
+        var place=$(this).val();
+        if(place == "Date"){
+            $('#searchbar').attr('placeholder',"MM/DD/YYYY");
+        }
+        else{}
+
+    });
+
 </script>
 
 </body>
