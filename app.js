@@ -70,12 +70,13 @@ app.get('/footprints', function (req, res) {
         case '': break;
     }
     console.log(searchParameter);
-    var sqlRequest = "select mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ searchParameter + " like " + "'" + queryString + "';";
+    var sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ searchParameter + " like " + "'" + queryString + "' order by mrID desc;";
     if( searchParameter == 'mrTITLE'){
-        sqlRequest = "select mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ "CONTAINS(mrTITLE,'" + queryString +"')";
+        sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ "CONTAINS(mrTITLE,'" + queryString +"') order by mrID desc;";
     }
     if( searchParameter == 'Target__bDate') {
-        sqlRequest = "select mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where CONTAINS(CONVERT(VARCHAR(10), Target__bDate),'" + queryString +"')";
+        sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where CAST(Target__bDate as date) >= '" + queryString +
+        "' ORDER BY Target__bDate asc";
     }
     console.log(sqlRequest);
     var myQuery = request.query(sqlRequest,

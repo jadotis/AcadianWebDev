@@ -33,7 +33,7 @@
 
 
 table{
-    width:20%;
+    width:100%;
     table-layout: fixed;
     position: fixed;
     top: 11em;
@@ -78,4 +78,9 @@ tr:hover{
 button{
     border: solid 2px white;
     width: 8em;
+}
+
+a.ng-binding{
+    color: gold;
+    text-decoration: underline;
 }

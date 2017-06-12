@@ -26,7 +26,8 @@ nav{
 /*NAVbar css for neatness */
 .navbar{
     background: -webkit-linear-gradient(left,#005479,#0a5d79, #3e5667);
-    min-height:32px !important
+    min-height:32px !important;
+    z-index: 10000;
 }
 #navbar{
     width: 100%;
@@ -80,31 +81,38 @@ nav{
     color: yellow;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    z-index: 100000;
 }
 #dropMenu>li:hover{
     background-color:  darkblue;
+
 }
 
 #dropItems{
     background-color:  #0f5279;
     width: 20em;
+
 }
 #dropItems>li>a{
     color: white;
+
 }
 #dropItems>li>a:hover{
     color: yellow;
+
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
     background-color: #0C6A79;
+
 }
 /* dropDown Menu Config */
+
 
 #title{
     position: fixed;
     top: -.5em;
     right: 0.2em;
-    z-index: 1031;
+    z-index: 10031;
     /*text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0,0,5,1) 0 0px 10px; */
     font-size: xx-large;
     color: white;

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta author="James Otis" content="">
-    <title>Acadian Footprints</title>
+    <title>Footprints</title>
     <link rel="icon" type="image/x-icon" sizes="96x96" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon.ico?">
@@ -35,7 +35,7 @@
 <!----https://helpdesk.acadian-asset.com/MRcgi/MRlogin.pl?DL=88581DA2 --->
 
 
-<body>
+<body ng-controller="footprintController">
 
 <nav class="navbar navbar-inverse navbar-fixed-top ">
     <div class="container">
@@ -83,12 +83,15 @@
     </div>
 </div>
 <form id="searchbar" class="form-inline col-lg-12" style="background-color: #0f5279">
-    <div class="input-group" >
-        <input maxlength="50" ng-model="queryString" type="text" class="form-control" id="inlineFormInputGroup" style="font-size: .8em;"
-               placeholder="Search for a Deployment....">
+    <div class="input-group ">
+        <input maxlength="50" ng-model="queryString" type="text" class="form-control" id="inlineFormInputGroup"
+               style="font-size: .8em;"
+               placeholder="{{placeHolder}}">
     </div>
-    <div id="searchbarInteractive" ng-controller="footprintController">
-        <select id="selectbar" ng-model="selectedOption" class="selectpicker" >
+    <div id="searchbarBackground" class="container">
+    </div>
+    <div id="searchbarInteractive">
+        <select id="selectbar" ng-model="selectedOption" class="selectpicker">
             <option>FP Number</option>
             <option>Status</option>
             <option>Date</option>
@@ -102,20 +105,27 @@
 <table>
     <thead>
     <tr>
-        <th style="width: 20%">FP Number</th>
-        <th style="width: 20%">Status</th>
-        <th style="width: 50%">Description</th>
-        <th style="width: 10%">Target Date</th>
+        <th style="width: 20%; text-align: center">FP Number</th>
+        <th style="width: 20%; text-align: center">Status</th>
+        <th style="width: 50%; text-align: center">Description</th>
+        <th style="width: 10%; text-align: center">Target Date</th>
     </tr>
     </thead>
     <tbody>
-    <td style="width: 20%">54645</td>
-    <td style="width: 20%">Approved</td>
-    <td style="width: 50%">This is a sample description to fill in this field and check for overflow if there is overflow then there should be an elipses otherwise there should not be anything else that should appear within this tag. The rest of this sentence is just going to be fiuller so that we can check whether or not this is a working tag because I am being really thorough </td>
-    <td style="width: 10%">Target Date</td>
+    <tr ng-repeat="x in tableValues |limitTo:100">
+        <td style="width: 20em; text-align: center"><a style="text-decoration: underline" href="https://helpdesk.acadian-asset.com/MRcgi/MRlogin.pl?DL={{x.mrID}}DA2">{{x.mrID}}</a></td>
+        <td style="width: 20em; text-align: center">{{x.mrSTATUS}}</td>
+        <td style="width: 80em">{{x.mrTITLE}}</td>
+        <td style="width: 20em; text-align: center">{{x.Target__bDate}}</td>
     </tr>
     </tbody>
 </table>
+<div id="errorString">
+    <h1>There was an error with your Query...</h1>
+</div>
+<div id="noResultsFound">
+    <h1>No results found for your Query...</h1>
+</div>
 
 
 <div class="footerholder">
@@ -131,17 +141,6 @@
     }, function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
     });
-
-    //This is not working to update the placeholder
-    $('select').on('change',function(){
-        var place=$(this).val();
-        if(place == "Date"){
-            $('#searchbar').attr('placeholder',"MM/DD/YYYY");
-        }
-        else{}
-
-    });
-
 </script>
 
 </body>

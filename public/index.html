@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta author="James Otis" content="">
-    <title>Acadian Site Template</title>
+    <title>Home</title>
     <link rel="icon" type="image/x-icon" sizes="96x96" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon.ico?">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon.ico?">
@@ -265,7 +265,7 @@
                 <th style="width: 20em; font-size: x-large; text-align: center">Description</th>
             </tr>
             <tr ng-repeat="x in result">
-                <td>{{x.mrID}}</td>
+                <td><a href="https://helpdesk.acadian-asset.com/MRcgi/MRlogin.pl?DL={{x.mrID}}DA2">{{x.mrID}}</a></td>
                 <td>{{x.mrTITLE}}</td>
             </tr>
         </table>
