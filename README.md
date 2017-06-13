@@ -18,6 +18,11 @@ These commands can be found at the latter part of the included
 build.ps1 script.
 
 ```
+![Alt text](/public/img/GithubPhoto.PNG?raw=true "Example DB Query and Display")
+
+
+
+
 ## Usage
 ```
 from the source directory run node .\bin\www or the equivalent in
@@ -25,10 +30,10 @@ bash ./bin/www
 ```
 ## Continued tasks
 ```
-1. Business logic for DBs and Footprints
-2. Fix the webform to include the proper field checking for forms
-3. Finish the back end to include the powershell scripts for file transfers
-4. Add functionality and CSS
-5. Figure out how to affix the 'Release Engineering' tag to the top of the Navbar
+1. Business logic for DBs and Footprints  (COMPLETED)
+2. Fix the webform to include the proper field checking for forms (COMPLETED)
+3. Finish the back end to include the powershell scripts for file transfers 
+4. Add functionality and CSS  (COMPLETED)
+5. Figure out how to affix the 'Release Engineering' tag to the top of the Navbar (COMPLETED)
 ```
 
