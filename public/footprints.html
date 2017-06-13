@@ -84,7 +84,7 @@
 </div>
 <form id="searchbar" class="form-inline col-lg-12" style="background-color: #0f5279">
     <div class="input-group ">
-        <input maxlength="50" ng-model="queryString" type="text" class="form-control" id="inlineFormInputGroup"
+        <input autocomplete="off" maxlength="50" ng-model="queryString" type="text" class="form-control" id="inlineFormInputGroup"
                style="font-size: .8em;"
                placeholder="{{placeHolder}}">
     </div>
@@ -115,7 +115,7 @@
     <tr ng-repeat="x in tableValues |limitTo:100">
         <td style="width: 20em; text-align: center"><a style="text-decoration: underline" href="https://helpdesk.acadian-asset.com/MRcgi/MRlogin.pl?DL={{x.mrID}}DA2">{{x.mrID}}</a></td>
         <td style="width: 20em; text-align: center">{{x.mrSTATUS}}</td>
-        <td style="width: 80em">{{x.mrTITLE}}</td>
+        <td style="width: 80em; text-align: center">{{x.mrTITLE}}</td>
         <td style="width: 20em; text-align: center">{{x.Target__bDate}}</td>
     </tr>
     </tbody>
@@ -125,6 +125,9 @@
 </div>
 <div id="noResultsFound">
     <h1>No results found for your Query...</h1>
+</div>
+<div id="startingString">
+    <h1>Please select a Category and Search...</h1>
 </div>
 
 

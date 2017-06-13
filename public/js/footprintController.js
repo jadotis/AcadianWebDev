@@ -1,5 +1,6 @@
 app.controller('footprintController', function ($scope, $element, $timeout, $http) {
 
+
     $scope.selectedOption = "FP Number";
     //Set the default value for the searching
     $scope.placeHolder = "Search for a Deployment....";
@@ -18,8 +19,10 @@ app.controller('footprintController', function ($scope, $element, $timeout, $htt
         return dateString.match(regEx) != null;
 
     }
+
     $scope.tableValues = [];
     $scope.query = function(){
+        document.getElementById('startingString').style = "display: none";
         if($scope.queryString == undefined){
             return;
         }

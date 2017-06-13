@@ -1,3 +1,4 @@
+
 .footerholder {
     background: none repeat scroll 0 0 transparent;
     bottom: -75px;
@@ -19,7 +20,7 @@
     top: 8em;
     align-items: center;
     z-index: 2010;
-    left: -1em;
+    right: -15em;
     width: 110%;
     height: 5em;
 }
@@ -27,13 +28,15 @@
 .input-group{
     width: 100%;
     font-size: 20px;
-
+    right: 1.7em;
+    border-bottom: 2px solid #31708f;
+    overflow: hidden;
 }
 
 .input-group>input{
     z-index: 2006;
-    font-size: 25px;
-    padding-left: 75px;
+    font-size: 20px;
+    padding-left: 115px;
 }
 #inlineFormInputGroup{
     height: 5em;
@@ -42,6 +45,7 @@
     z-index: 2006;
     color: White;
     font-size: 25px;
+    border: 2px #0a5d79 solid;
 }
 
 #inlineFormInputGroup::placeholder{
@@ -53,8 +57,8 @@
 
 #searchbarInteractive{
     position: fixed;
-    top: 9em;
-    right: 5em;
+    top: 8.95em;
+    right: 3.1em;
     z-index: 2007;
 }
 
@@ -76,6 +80,8 @@ input:-webkit-autofill:focus {
 
 
 .selectpicker{
+    position: fixed;
+    right: 14.8em;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -94,27 +100,33 @@ input:-webkit-autofill:focus {
 }
 
 .btn{
-    height: 3.6em;
+    position: fixed;
+    right: 3.5em;
+    height: 3.55em;
     width: 11em;
+    top: 8.95em;
     padding: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     font-size: 14px;
+    background-color: rgba(35,85,105,0.97);
 }
 .btn:hover{
     border: 2px solid yellow;
+    background-color: rgba(35,85,105,0.97)
+
 }
 
 #searchbarBackground {
     position: fixed;
-    width: 136.8em;
+    width: 136.9em;
     height: 4.5em;
-    top: 8.6em;
+    top: 8.53em;
     z-index: 2006;
     opacity: .18;
     border-radius: 20px;
     pointer-events: none;
     background-color: white;
-    border: lightgrey 3px solid;
+    border: darkslategray 4px solid;
 }
 
 
@@ -137,7 +149,20 @@ input:-webkit-autofill:focus {
     z-index: 2050;
     display: none;
 }
+#startingString{
+    position: fixed;
+    Color: #0f5279;
+    top: 7.5em;
+    right: 15em;
+    font-style: italic;
+    z-index: 20500;
+    display: initial;
+    font-size: 50px;
+}
 
+div#searchbarBackground.container{
+    left: 20px;
+}
 
 
 
@@ -149,11 +174,12 @@ table
     position: fixed;
     text-align: left;
     box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.2), 0 44px 100px 0 rgba(0, 0, 0, 0.29);
-    top: 14em;
+    top: 13.7em;
     width: 95%;
     border-collapse:collapse;
     margin: 0 auto;
     background: rgba(221, 221, 221, 0.9);
+
 
 }
 
@@ -207,4 +233,46 @@ tr:nth-child(even)
 tr td:nth-child(2)
 {
     font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* Hover Effect for table */
+tr td{
+    position: relative;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+tr td:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+tr td:hover {
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+}
+tr td:hover:before {
+    opacity: 1;
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
