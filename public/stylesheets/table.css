@@ -1,4 +1,4 @@
-
+/*****This StyleSheet was created by James Otis for the Use of Acadian Asset Management ******/
 .footerholder {
     background: none repeat scroll 0 0 transparent;
     bottom: -75px;
@@ -16,23 +16,24 @@
 /* End standard template */
 
 #searchbar{
-    position: fixed;
+    padding: 0;
+    position: absolute;
+    margin: 0;
     top: 8em;
     align-items: center;
+    left: 0px;
     z-index: 2010;
-    right: -15em;
     width: 110%;
     height: 5em;
 }
-
 .input-group{
     width: 100%;
     font-size: 20px;
-    right: 1.7em;
+    margin-right: 0;
     border-bottom: 2px solid #31708f;
     overflow: hidden;
+    left: 0;
 }
-
 .input-group>input{
     z-index: 2006;
     font-size: 20px;
@@ -47,21 +48,18 @@
     font-size: 25px;
     border: 2px #0a5d79 solid;
 }
-
 #inlineFormInputGroup::placeholder{
     font-size: 20px;
     color: White ;
     filter: brightness(250%);
 
 }
-
 #searchbarInteractive{
     position: fixed;
     top: 8.95em;
     right: 3.1em;
     z-index: 2007;
 }
-
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color: #0f5279; !important;
     background-image: none;
@@ -70,15 +68,11 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 input:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px #0f5279 inset;
     -webkit-text-fill-color: gold;
-
 }
-
 input:-webkit-autofill:focus {
     -webkit-box-shadow:0 0 0 50px #0f5279 inset;
     -webkit-text-fill-color: gold;
 }
-
-
 .selectpicker{
     position: fixed;
     right: 14.8em;
@@ -89,20 +83,18 @@ input:-webkit-autofill:focus {
     border: 2px solid black;
     overflow: hidden;
     font-size: 14px;
-    height: 3.55em;
+    height: 3.6em;
     padding: 5px; /* If you add too much padding here, the options won't show in IE */
     width: 13em;
     color: white;
 }
-
 .selectpicker:hover{
     border-color: gold;
 }
-
 .btn{
     position: fixed;
     right: 3.5em;
-    height: 3.55em;
+    height: 3.6em;
     width: 11em;
     top: 8.95em;
     padding: 5px;
@@ -113,12 +105,10 @@ input:-webkit-autofill:focus {
 .btn:hover{
     border: 2px solid yellow;
     background-color: rgba(35,85,105,0.97)
-
 }
-
 #searchbarBackground {
     position: fixed;
-    width: 136.9em;
+    width: 100%;
     height: 4.5em;
     top: 8.53em;
     z-index: 2006;
@@ -128,9 +118,6 @@ input:-webkit-autofill:focus {
     background-color: white;
     border: darkslategray 4px solid;
 }
-
-
-
 #errorString{
     position: fixed;
     Color: darkred;
@@ -159,7 +146,6 @@ input:-webkit-autofill:focus {
     display: initial;
     font-size: 50px;
 }
-
 div#searchbarBackground.container{
     left: 20px;
 }
@@ -179,8 +165,6 @@ table
     border-collapse:collapse;
     margin: 0 auto;
     background: rgba(221, 221, 221, 0.9);
-
-
 }
 
 td, th
@@ -199,32 +183,22 @@ thead
     background: #31708f;
     border-bottom: 4px darkslategray solid;
 }
-
 th
 {
-
     color: white;
     font-weight: 900;
     text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
 }
-
 th:last-child
 {
     width: 219px;
 }
-
 tbody
 {
     width: 100%;
     overflow: auto;
     height: 55em;
-    display: block;
 }
-
-tr {
-    display: table-header-group;
-}
-
 tr:nth-child(even)
 {
     background: rgba(183, 183, 183, 0.67);
@@ -234,15 +208,6 @@ tr td:nth-child(2)
 {
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
 /* Hover Effect for table */
 tr td{
     position: relative;
@@ -263,16 +228,13 @@ tr td:before {
     width: 90%;
     opacity: 0;
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-    /* W3C */
     transition-duration: 0.3s;
     transition-property: transform;
 }
 tr td:hover {
     transform: translateY(-5px);
-    /* move the element up by 5px */
 }
 tr td:hover:before {
     opacity: 1;
     transform: translateY(5px);
-    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }

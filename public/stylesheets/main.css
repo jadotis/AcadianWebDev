@@ -2,6 +2,8 @@
     position: relative;
     margin-top: 5em;
     right: 4em;
+    width: 90vmax;
+    margin-left: 10px;
 
 }
 #contentBox{
@@ -14,11 +16,13 @@
     background: -webkit-linear-gradient(left, rgba(15, 82, 121, .60) 10% , #0f5279 90%);
     position: fixed;
     top: 11.5%;
-    left: 71%;
-    width: 39em;
-    height: 62.8em;
-    text-wrap: none;
+    width: 29vmax;
+    height: 65.8em;
+    text-wrap: normal;
     box-shadow: 5px 4px 5px black;
+    right: 0;
+    margin-right: 15px;
+    padding: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -33,12 +37,13 @@
 
 
 table{
-    width:27.5%;
+    width: 26vmax;
     table-layout: fixed;
     position: fixed;
     top: 11em;
     text-overflow-ellipsis: true;
     padding-left: 2px;
+    padding-right: 2px;
     max-height: 11em;
 }
 
@@ -68,20 +73,22 @@ tr:hover{
 
 #ticketInven{
     position: fixed;
+    right: 7.5vmax;
     top: 3em;
-    right: 4em;
+    text-align: center;
     z-index: 2000;
     font-size: 2.6em;
 }
 
 .input-group{
     position: fixed;
-    top: 69em;
-    right: 4em;
+    top: 70em;
+    right: 4vmax;
 }
 button{
     border: solid 2px white;
-    width: 8em;
+    width: 10em;
+    height: 4em;
 }
 
 a.ng-binding{

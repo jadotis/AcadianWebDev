@@ -5,7 +5,7 @@ body {
     background: -o-linear-gradient(bottom right, gray, #3e5667); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(bottom right, gray, #3e5667); /* For Firefox 3.6 to 15 */
     font-family: Georgia, Times, "Times New Roman", serif;
-    text-overflow: ellipsis;
+
 }
 nav{
     height: 7.8em;
