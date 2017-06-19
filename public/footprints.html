@@ -101,7 +101,7 @@
     </div>
 </form>
 
-<div>
+<div id="tableBase" >
 <table>
     <thead>
     <tr>
@@ -111,7 +111,7 @@
         <th style="width: 10%; text-align: right">Target Date</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody class="scroll-container">
     <tr ng-repeat="x in tableValues |limitTo:100">
         <td style="width: 20em; text-align: center"><a style="text-decoration: underline" href="https://helpdesk.acadian-asset.com/MRcgi/MRlogin.pl?DL={{x.mrID}}DA2">{{x.mrID}}</a></td>
         <td style="width: 20em; text-align: center">{{x.mrSTATUS}}</td>

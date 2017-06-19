@@ -38,14 +38,22 @@ app.controller('footprintController', function ($scope, $element, $timeout, $htt
                 if($scope.tableValues.length < 1){
                     document.getElementById('noResultsFound').style ='display: initial';
                     document.getElementById('errorString').style = 'display: none';
+                    document.getElementById('tableBase').style = 'overflow-y: visible';
                 }
                 else if(data.code == "EREQUEST"){
                     document.getElementById('errorString').style = 'display: initial';
                     document.getElementById('noResultsFound').style = 'display: none';
+                    document.getElementById('tableBase').style = 'overflow-y: visible';
+                }
+                else if($scope.tableValues.length > 10){
+                    document.getElementById('errorString').style = 'display: none';
+                    document.getElementById('noResultsFound').style = 'display: none';
+                    document.getElementById('tableBase').style = 'overflow-y: scroll';
                 }
                 else{
                     document.getElementById('errorString').style = 'display: none';
                     document.getElementById('noResultsFound').style = 'display: none';
+                    document.getElementById('tableBase').style = 'overflow-y: visible';
                 }
                  for(var i= 0; i< $scope.tableValues.length; i++){
                      if($scope.tableValues[i].Target__bDate == null){
