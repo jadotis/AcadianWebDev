@@ -1,17 +1,40 @@
+body{
+    margin: 8px;
+}
+
+
 #errorString {
     color: #D8000C;
-    background-color: #FFBABA;  margin: 10px 0;
-    padding: 10px;
-    border-radius: 3px 3px 3px 3px;
+    word-spacing: normal;
+    font-size: x-large;
+    background-color: #FFBABA;
+    padding-top: .7vmax;
+    padding-left: 1vmax;
+    border-radius: 5px 5px 5px 5px;
     display: none;
+    height: 3Vmax;
+    min-height: 2Vmax;
+    width: 100%;
+    text-overflow-ellipsis: true;
 }
 #webform{
-    margin-top: 10em;
+    margin-top: 6em;
+    height: 80vh;
+    padding: .6vmaX;
+    background-color: #8a8a8a;
+    border-radius: 20px;
+
 }
 #contact_form{
+    padding-bottom: 2vmax;
     border-radius: 10px;
     border: outset #245269;
-    box-shadow: #245269;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    padding: 1vmax;
+    height: 100%;
+}
+legend{
+    border-bottom: solid 3px gray;
 }
 
 #successMessage
@@ -22,7 +45,37 @@ div.input-group{
     border-color: #245269;
     border-style: ridge;
     border-radius: 10px;
+    width: 25vmax;
+    height: 1vmax;
 }
 label.col-md-2.control-label{
-    font-size: 20px;
+    font-size: 1vmax;
+}
+
+.form-control{
+    padding: 0;
+}
+
+.selectpicker{
+    height: 2.25vmax;
+    width: 25vmax;
+}
+
+input.form-control{
+    height: 2.25vmax;
+    width: 25vmax;
+    padding-left: .5vmax;
+}
+
+div.form-group {
+    height: 2vmax;
+    width: 50vmax;
+}
+
+
+
+span.input-group-addon{
+    padding: .55vmax;
+    height: 1.5vmax;
+    width: 1.5vmax;
 }

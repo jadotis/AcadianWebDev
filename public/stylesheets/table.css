@@ -234,15 +234,17 @@ tr td{
     box-shadow: 0 0 2px transparent;
 }
 tr td:hover {
-    box-shadow: 7px 7px gray;
-    -webkit-transform: translateX(-8px) translateY(-8px);
-    transform: translateX(-8px) translateY(-8px);
-    -webkit-transition-duration: .4s;
-    transition: .4s;
+    box-shadow: 10px 10px gray;
+    -webkit-transform: translateX(-10px) translateY(-10px);
+    transform: translateX(-10px) translateY(-10px);
+    -webkit-transition-duration: 1s;
+    transition: 1s;
     font-size: 18px;
-    color: #0f5279;
-    background-color: lightslategray;
+    background-color: #b3b3b3;
+    color: #0a5d79;
 
 }
-
+a:hover{
+    color: gold
+}
 

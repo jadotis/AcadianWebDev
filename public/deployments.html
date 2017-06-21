@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +15,9 @@
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="stylesheets/bootstrap.icon-large.min.css" rel="stylesheet">
     <!---Basic StyleSheet for this dashboard--->
-    <link href="stylesheets/form.css" rel="stylesheet">
     <link href="stylesheets/template.css" rel="stylesheet">
+    <link href="stylesheets/form.css" rel="stylesheet">
+
     <!----StyleSheet for the ticketing table---->
     <!-- HTML5 shim support for IE10--->
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -31,20 +31,21 @@
     <div class="container">
         <div class="navbar-header">
             <!---Button is connected only on small screen sizes--->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="http://www.acadian-asset.com">
-                <img src="img/AcadianWhite.gif" width="92em" height="85em"  >
+                <img src="img/AcadianWhite.gif" width="92em" height="85em">
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav ">
                 <li><a href="index.html">Home</a></li>
-                <li ><a href="footprints.html">Footprints</a></li>
+                <li><a href="footprints.html">Footprints</a></li>
                 <li id="activePage"><a href="deployments.html">Deployments</a></li>
                 <li id="Admin"><a href="admin.html">Administrator</a></li>
                 <!---Dropdown bar---->
@@ -68,133 +69,130 @@
 <!---Title in top right corner---->
 <div class="container">
     <div class="starter-template">
-        <h1 id="title" >Administration</h1>
+        <h1 id="title">Release Engineering</h1>
     </div>
 </div>
 
 
 <!----Begin the container for the form---->
 <div id="webform" class="container">
+    <form class="well form-horizontal" id="contact_form">
+        <!-- Text input-->
+        <legend>Quick Deploy (BETA)</legend>
 
-    <form class="well form-horizontal"  id="contact_form">
-            <!-- Text input-->
-            <legend>Quick Deploy (BETA)</legend>
-
-            <div class="form-group">
-                <label class="col-md-2 control-label">Username</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="login" placeholder="Ex: jsmith" class="form-control"  type="text">
-                    </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Username</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input name="login" placeholder="Ex: jsmith" class="form-control" type="text">
                 </div>
             </div>
-
-            <!-- Text input-->
-
-            <div class="form-group">
-                <label class="col-md-2 control-label" >Password</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input name="password" placeholder="*****" class="form-control"  type="password">
-                    </div>
+        </div>
+        <br>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Password</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input name="password" placeholder="*****" class="form-control" type="password">
                 </div>
             </div>
-
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-2 control-label">E-Mail</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-                    </div>
+        </div>
+        <br>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-2 control-label">E-Mail</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
                 </div>
             </div>
-
-
-            <!---Business Logic for Deploy---->
-            <!-- Text input-->
-
-            <div class="form-group">
-                <label class="col-md-2 control-label">Source Path</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
-                        <input name="srcPath" placeholder="C:\Windows\Users\jsmith" class="form-control" type="text">
-                    </div>
+        </div>
+        <br>
+        <!---Business Logic for Deploy---->
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Source Path</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
+                    <input name="srcPath" placeholder="C:\Windows\Users\jsmith" class="form-control" type="text">
                 </div>
             </div>
-
-            <!-- Text input-->
-
-            <div class="form-group">
-                <label class="col-md-2 control-label">Destination Path</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-folder-close"></i></span>
-                        <input name="destPath" placeholder="Z:\SomeServer\jsmith" class="form-control" type="text">
-                    </div>
+        </div>
+        <br>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-2 control-label">Destination Path</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-folder-close"></i></span>
+                    <input name="destPath" placeholder="Z:\SomeServer\jsmith" class="form-control" type="text">
                 </div>
             </div>
-
-            <!-- Text input-->
-
-            <div class="form-group">
-                <label class="col-md-2 control-label">File Structure</label>
-                <div class="col-md-3 selectContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
-                        <select name="fileInfo"  class="form-control selectpicker">
-                            <option value = "">File/Directory</option>
-                            <option>File</option>
-                            <option>Directory</option>
-                        </select>
-                    </div>
+        </div>
+        <br>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-2 control-label">File Structure</label>
+            <div class="col-md-3 selectContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                    <select name="fileInfo" class="form-control selectpicker">
+                        <option value="">File/Directory</option>
+                        <option>File</option>
+                        <option>Directory</option>
+                    </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Server Name or IP</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-hdd"></i></span>
-                        <input name="server" placeholder="BOS-SMITH-D7" class="form-control" type="text">
-                    </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Server Name or IP</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-hdd"></i></span>
+                    <input name="server" placeholder="BOS-SMITH-D7" class="form-control" type="text">
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label">Description</label>
-                <div class="col-md-3 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                        <textarea id = "textarea" class="form-control" name="description" placeholder="Ex: Moving NuGet packages to DB01"></textarea>
-                    </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Description</label>
+            <div class="col-md-3 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                    <textarea id="textarea" class="form-control" name="description"
+                              placeholder="Ex: Moving NuGet packages to DB01"></textarea>
                 </div>
             </div>
-
-            <!-- Button -->
-            <div class="form-group">
-                <label class="col-md-2 control-label"></label>
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-primary"  onclick="formValidate();" >Send <span class="glyphicon glyphicon-send"></span></button>
-                </div>
+        </div>
+        <br>
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary" onclick="formValidate();">Send <span
+                        class="glyphicon glyphicon-send"></span></button>
             </div>
+        </div>
         <div class="form-group">
             <label class="col-md-2 control-label"></label>
             <div class="col-md-4">
-                <div id= "errorString" class="error-msg">
+                <div id="errorString" class="error-msg">
                 </div>
-                <div id ="successMessage" class="alert alert-success">
+                <div id="successMessage" class="alert alert-success">
                     <strong>Success!</strong> Executing a script with your parameters..
                 </div>
             </div>
         </div>
-
     </form>
 </div>
-</div><!-- /.container -->
-<footer style="text-align: center">&copy Acadian Asset Management, Inc. 2007. All rights reserved </footer>
+<!-- /.container -->
+<footer style="text-align: center">&copy Acadian Asset Management, Inc. 2007. All rights reserved</footer>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -203,9 +201,9 @@
 <script src="/js/bootstrap.min.js"></script>
 <!----Button Hover javascript for bootstrap --->
 <script type="text/javascript">
-    $('ul.nav li.dropdown').hover(function() {
+    $('ul.nav li.dropdown').hover(function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(200);
-    }, function() {
+    }, function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
     });
 </script>

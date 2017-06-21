@@ -49,8 +49,8 @@ function renderError(errorMessage){
     //Produces the appropriate error if there exists one as indicated
     //by the error string.
     if(errorMessage != ""){
-        document.getElementById("errorString").style.display = "block";
-        document.getElementById("errorString").innerHTML = errorMessage;
+        document.getElementById("errorString").style.display = "inline-block";
+        document.getElementById("errorString").innerText = errorMessage;
         document.getElementById("successMessage").style.display = "none";
         //Change the display parameter
     }
