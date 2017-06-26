@@ -2,11 +2,100 @@ body{
     padding: 5px;
     margin: 2px;
 }
-
-
 #mainTable{
     position: relative;
-    top: 12rem;
+    top: 18rem;
     padding: 0;
     margin: 0;
+}
+
+.form-group{
+    top: 12rem;
+    height: 7vh;
+    position: fixed;
+    margin: 0;
+    z-index: auto;
+    padding: 0;
+    left: 0;
+
+}
+div.input-group-addon{
+    background-color: #0f5279;
+    color: gold;
+    padding: 0px;
+    border: 2px solid black;
+    width: 100px;
+}
+
+
+.form-group > .input-group > input {
+    padding: 10px;
+    height: 6rem;
+    font-size: 3rem;
+    color: black;
+    border-radius: 10px;
+    border:solid darkslategray 1px;
+    width: 97vw;
+}
+.form-group > .input-group > input::placeholder{
+    height: 5rem;
+    font-size: 3rem;
+    color: #0f5279;
+    opacity: .7;
+    font-style: italic;
+}
+
+
+/* Table CSS */
+table thead tr{
+    display:block;
+    width: 100%;
+    background-color: #0f5279;
+    border: lightskyblue solid 1px;
+}
+th{
+    color: gold;
+}
+table th,table td{
+    width:100%;
+}
+
+table tbody{
+    display:block;
+    height:76vh;
+    overflow:auto;
+    width: 100%;
+    border: solid #0f5279 3px;
+}
+a{
+    color: gold !important;
+}
+/*End table CSS*/
+
+/*Webkit Scrollbar CSS*/
+::-webkit-scrollbar {
+    width: 1vw;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px  #0a5d79;;
+
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px dodgerblue;
+}
+/*End Webkit scrollbar*/
+/*Footer CSS*/
+.footerholder {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -75px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+.footer {
+    background: none repeat scroll 0 0;
+    height: 100px;
+    margin: auto;
+    width: 400px;
+    color: #0f5279;
 }

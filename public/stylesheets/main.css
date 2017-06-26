@@ -1,33 +1,35 @@
 ﻿#content{
+
     position: relative;
-    margin-top: 5em;
-    right: 4em;
-    width: 90vmax;
-    margin-left: 10px;
+    margin-top: 7.4rem;
+    right: 3vw;
+    width: 90vw;
+    margin-left: 1vh;
 
 }
 #contentBox{
-    box-shadow: 5px 4px 5px #005479;
+    box-shadow: 0px 0px 100px 0px black, 0px 0px 0px 2px rgba(15, 113, 158, 0.6);
+    border-radius: 20px;
+    background-color: #d2d2d2;
 }
 
 
 #sidebar{
     border-radius: 20px;
-    background: -webkit-linear-gradient(left, rgba(15, 113, 158, 0.6) 10% , #10618a 90%);
+    background: -webkit-linear-gradient(left, #4988bc 97%, #10618a 100%);
     position: fixed;
-    top: 6.3vmax;
-    width: 29vmax;
-    height: 48vmax;
+    top: 12.2rem;
+    width: 30vw;
+    height: 82.5vh;
     text-wrap: normal;
     box-shadow: 5px 4px 5px black;
     right: 0;
-    margin-right: 1.2vmax;
     padding: 10px;
-    margin-top: .3vmax;
     overflow: auto;
-    min-height: 450px;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
-
+/*Changes the scrollbar for the side of the browser*/
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -38,7 +40,7 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-
+/*These need to edited on DB access */
 table{
     width: 26vmax;
     table-layout: fixed;
@@ -50,8 +52,6 @@ table{
     max-height: 11em;
     overflow: auto;
 }
-
-
 th{
     padding: 20px 15px;
     text-align: left;
@@ -74,11 +74,14 @@ td{
 tr:hover{
     background-color: #245269;
 }
-
 #ticketInven{
+    color: ghostwhite;
+    font-family: 'Myriad Pro', 'Myriad', helvetica, arial, sans-serif;
+    text-shadow: 2px 3px 3px #292929;
+    -webkit-text-stroke: 1px white;
     position: fixed;
-    right: 7.5vmax;
-    top: 3em;
+    right: 8.4vw;
+    top: 10rem;
     text-align: center;
     z-index: 2000;
     font-size: 2vw;
@@ -92,10 +95,11 @@ tr:hover{
 button{
     position: fixed;
     border: solid 2px white;
-    width: 6vmax;
-    height: 3vmax;
-    bottom: 2vmax;
-    right: 2vmax;
+    width: 12rem;
+    height: 5rem;
+    bottom: 9vh;
+    right: 3vw;
+    font-size: 2rem;
 }
 
 a.ng-binding{
