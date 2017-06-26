@@ -1,0 +1,12 @@
+body{
+    padding: 5px;
+    margin: 2px;
+}
+
+
+#mainTable{
+    position: relative;
+    top: 12rem;
+    padding: 0;
+    margin: 0;
+}

@@ -10,8 +10,9 @@ var session = require('express-session');
 var favicon = require('serve-favicon');
 var path = require('path');
 const sql = require("mssql/msnodesqlv8");
-// /require("msnodesqlv8");
-var returnValue = '';
+var servers = require('./servers.json'); //Must be included for the admin page
+var fs = require('file-system');
+//MARKED FOR DELETE var returnValue = '';
 const conn = new sql.ConnectionPool({
     Provider: "SQLOLEDB",
     database: "Footprints",
@@ -21,25 +22,17 @@ const conn = new sql.ConnectionPool({
         trustedConnection: true
     }
 });
+/* Above contains all parameters and the dependencies for the project */
 
-//console.log("Connected");
-//const request = new sql.Request(conn);
-//var myQuery = request.query("select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where mrSTATUS != '_INACTIVE_' AND Target__bDate not like 2017 order by mrSUBMITDATE desc;"
-//    , function (err, result) {
-//       if (err) {
-//           console.log(err);
-//       }
-//        else {
-//            returnValue = result;
-//        }
-//    });
-//returnValue = myQuery;
+
+
+
 
 /* Access to the Database via the conn variable */
 function DBconnect() {
     conn.connect(function (err) {
         if (err) {
-            console.log("error");
+            console.log(err);
         }
         else {
             console.log("success");
@@ -47,13 +40,34 @@ function DBconnect() {
         }
     });
 }
-DBconnect();
 function DBclose() {
     conn.close();
 }
+//DBconnect();
 
 
-/* Routes */
+
+/***************************** Routes **************************************/
+/* Upon a request will send a parsed JSON file back to the front end */
+app.get('/jsonRead', function(req, res) {
+   fs.readFile('servers.json' ,function (err, content) {
+       if(err){
+           res.send(err);
+           console.log(err);
+           return;
+       }
+       else{
+           var serverList = JSON.parse(content);
+           res.send(JSON.stringify(serverList));
+       }
+   });
+});
+
+
+
+
+
+
 
 /* The route for the deployment page to generate the ticket list */
 app.get('/footprints', function (req, res) {
@@ -92,11 +106,6 @@ app.get('/footprints', function (req, res) {
         });
 });
 
-
-
-
-
-
 /*Ticket route for the home page sideboard */
 app.get('/tickets', function (req, res) {
     console.log('hit route /tickets');
@@ -113,6 +122,10 @@ app.get('/tickets', function (req, res) {
             }
         });
 });
+
+
+
+/**************************** EXPORTS ****************************************/
 
 
 app.use(body_parser.urlencoded({extended: false}));

@@ -12,6 +12,7 @@
     "debug": "^2.6.8",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
+    "file-system": "^2.2.2",
     "handlebars": "^4.0.10",
     "morgan": "^1.8.2",
     "msnodesqlv8": "^0.2.16",

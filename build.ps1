@@ -36,6 +36,7 @@ npm install debug --save
 npm install mssql --save
 npm install activedirectory --save
 npm install msnodesqlv8 --save
+npm install file-system --save
 
 
 Write-Host "Dependencies built correctly, please build the project"
