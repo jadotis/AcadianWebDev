@@ -1,0 +1,266 @@
+/*****This StyleSheet was created by James Otis for the Use of Acadian Asset Management ******/
+.footerholder {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -75px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.footer {
+    background: none repeat scroll 0 0;
+    height: 100px;
+    margin: auto;
+    width: 400px;
+    color: #0f5279;
+}
+
+/* End standard template */
+
+#searchbar {
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    top: 8em;
+    align-items: center;
+    left: 0px;
+    z-index: 1000;
+    width: 100%;
+    height: 5em;
+
+}
+
+.input-group {
+    width: 100%;
+    font-size: 20px;
+    margin-right: 0;
+    border-bottom: 2px solid #31708f;
+    overflow: hidden;
+    left: 0;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+.input-group > input {
+    z-index: auto;
+    font-size: 20px;
+    padding-left: 115px;
+}
+
+#inlineFormInputGroup {
+    height: 5em;
+    box-shadow: black;
+    background: -webkit-linear-gradient(right, #005479 55%, dodgerblue, darkslategray 99.99999%);
+    z-index: 2006;
+    color: White;
+    font-size: 25px;
+    border: 2px #0a5d79 solid;
+}
+
+#inlineFormInputGroup::placeholder {
+    font-size: 20px;
+    color: White;
+    filter: brightness(250%);
+
+}
+
+#searchbarInteractive {
+    position: fixed;
+    top: 8.95em;
+    right: 3.1em;
+    z-index: 2007;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #0f5279;
+!important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px #0f5279 inset;
+    -webkit-text-fill-color: gold;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #0f5279 inset;
+    -webkit-text-fill-color: gold;
+}
+
+.selectpicker {
+    position: fixed;
+    right: 14.8em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(35, 85, 105, 0.97);
+    border: 2px solid black;
+    overflow: hidden;
+    font-size: 14px;
+    height: 3.6em;
+    padding: 5px; /* If you add too much padding here, the options won't show in IE */
+    width: 13em;
+    color: white;
+}
+
+.selectpicker:hover {
+    border-color: gold;
+}
+
+.btn {
+    position: fixed;
+    right: 3.5em;
+    height: 3.6em;
+    width: 11em;
+    top: 8.95em;
+    padding: 5px;
+    border: 2px solid black;
+    font-size: 14px;
+    background-color: rgba(35, 85, 105, 0.97);
+}
+
+.btn:hover {
+    border: 2px solid yellow;
+    background-color: rgba(35, 85, 105, 0.97)
+}
+
+#searchbarBackground {
+    position: fixed;
+    width: 100%;
+    height: 4.5em;
+    top: 8.53em;
+    z-index: 2006;
+    opacity: .18;
+    border-radius: 20px;
+    pointer-events: none;
+    background-color: white;
+    border: darkslategray 4px solid;
+}
+
+#errorString {
+    position: fixed;
+    Color: darkred;
+    top: 25em;
+    right: 55em;
+    z-index: 2050;
+    font-style: italic;
+    display: none;
+}
+
+#noResultsFound {
+    position: fixed;
+    Color: darkblue;
+    top: 25em;
+    right: 55em;
+    font-style: italic;
+    z-index: 2050;
+    display: none;
+}
+
+#startingString {
+    position: fixed;
+    Color: #0f5279;
+    top: 7.5em;
+    right: 15em;
+    font-style: italic;
+    z-index: 20500;
+    display: initial;
+    font-size: 50px;
+}
+
+div#searchbarBackground.container {
+    left: 20px;
+}
+
+/*End Searchbar */
+
+/*begin table formatter */
+#tableBase {
+    position: fixed;
+    width: 95%;
+    top: 13.7em;
+    height: 47.5Vmax;
+    overflow-y: visible;
+
+}
+
+table {
+    position: relative;
+    table-layout: fixed;
+    text-align: left;
+    box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.2), 0 44px 100px 0 rgba(0, 0, 0, 0.29);
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: rgba(221, 221, 221, 0.9);
+    max-height: 100%;
+
+}
+
+td, th {
+    padding: 2em;
+    padding-bottom: 1.1em;
+    line-height: 2.2em;
+    font-weight: 700;
+    z-index: 2500;
+    padding-right: 3em;
+}
+
+thead {
+    display: block;
+    background: #31708f;
+    border-bottom: 4px darkslategray solid;
+}
+
+th {
+    color: white;
+    font-weight: 900;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+th:last-child {
+    width: 219px;
+}
+
+tbody {
+    display: block;
+    width: 100%;
+    height: 50%;
+    max-height: 70%;
+}
+
+tr:nth-child(even) {
+    background: rgba(183, 183, 183, 0.67);
+}
+
+tr td:nth-child(2) {
+    font-weight: bold;
+}
+
+/* Hover Effect for table */
+tr td {
+    overflow: auto;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateZ(0);
+    box-shadow: 0 0 2px transparent;
+}
+
+tr td:hover {
+    box-shadow: 10px 10px gray;
+    -webkit-transform: translateX(-10px) translateY(-10px);
+    transform: translateX(-10px) translateY(-10px);
+    -webkit-transition-duration: 1s;
+    transition: 1s;
+    font-size: 18px;
+    background-color: #b3b3b3;
+    color: #0a5d79;
+
+}
+
+a:hover {
+    color: gold
+}
+

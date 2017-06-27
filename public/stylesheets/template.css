@@ -1,106 +1,122 @@
 body {
     padding: 50px;
     background: white; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left,  #f1f1f1 2%, lightgray); /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(left, #f1f1f1 2%, lightgray); /* For Safari 5.1 to 6.0 */
     font-family: Georgia, Times, "Times New Roman", serif;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     z-index: auto;
 }
-nav{
+
+nav {
     height: 7.8em;
     box-shadow: 5px 4px 5px #000;
 }
-.container{
+
+.container {
     width: 100%;
     height: 100%;
 }
 
 /*NAVbar css for neatness */
-.navbar{
-    background: -webkit-linear-gradient(left,#005479 38%,steelblue 100%, #008CBA 96%);
-    min-height:32px !important;
+.navbar {
+    background: -webkit-linear-gradient(left, #005479 38%, steelblue 100%, #008CBA 96%);
+    min-height: 32px !important;
 }
-#navbar{
+
+#navbar {
     width: 100%;
     height: 100%;
 }
-.navbar-brand{
+
+.navbar-brand {
     padding-top: 20px;
     width: 100%;
     height: 100%;
 }
-#navbar.collapse.navbar-collapse{
+
+#navbar.collapse.navbar-collapse {
     width: 100%;
     height: 100%;
 }
 
-#navbar>ul>li:hover{
+#navbar > ul > li:hover {
     background: #005d84;
 }
-#navbar>ul>li>a{
-    font-size: x-large;
+
+#navbar > ul > li > a {
+    font-size: 20px;
     padding-top: 45px;
     padding-bottom: 0px;
     text-align: center;
-    height: 4.5em;
-    min-height:20px;
+    height: 10.75rem;
+    min-height: 20px;
     color: white;
 }
-#navbar>ul>li>a:hover
-{
+
+#navbar > ul > li > a:hover {
     color: gold;
 }
-#navbar>ul>#activePage{
-    background:  #005d84;
+
+#navbar > ul > #activePage {
+    background: #005d84;
 }
-#navbar>ul>#activePage>a{
-    color:gold;
+
+#navbar > ul > #activePage > a {
+    color: gold;
     text-decoration: underline;
 }
+
 /*NAVbar css for neatness */
 /* Administrator panel */
-#Admin{
+#Admin {
     position: absolute;
-    right: 0em;
+    width: 12em;
+    right: 0vw;
 }
-li#Admin:hover{
-    background-color:  #4988bc !important;
+
+li#Admin:hover {
+    background-color: #4988bc !important;
 }
+
 /* Administrator panel */
 /* dropDown Menu Config */
-#dropMenu{
+#dropMenu {
     position: absolute;
-    right: 13em;
+    right: 12em;
+    padding-right: 2px;
     color: yellow;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     z-index: 20000;
 }
-li#dropMenu:hover{
-    background-color:  #4988bc !important;
+
+li#dropMenu:hover {
+    background-color: #4988bc !important;
 }
 
-#dropItems{
+#dropItems {
     background-color: #4988bc;
     width: 20vw;
 }
-#dropItems>li>a{
+
+#dropItems > li > a {
     color: white;
 
 }
-#dropItems>li>a:hover{
+
+#dropItems > li > a:hover {
     color: yellow;
 }
 
-
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
     background-color: #10618a;
 }
+
 /* dropDown Menu Config */
 
-
-#title{
+#title {
     position: fixed;
     top: -.5em;
     right: 0.2em;

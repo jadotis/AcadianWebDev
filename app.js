@@ -46,27 +46,21 @@ function DBclose() {
 //DBconnect();
 
 
-
 /***************************** Routes **************************************/
 /* Upon a request will send a parsed JSON file back to the front end */
-app.get('/jsonRead', function(req, res) {
-   fs.readFile('servers.json' ,function (err, content) {
-       if(err){
-           res.send(err);
-           console.log(err);
-           return;
-       }
-       else{
-           var serverList = JSON.parse(content);
-           res.send(JSON.stringify(serverList));
-       }
-   });
+app.get('/jsonRead', function (req, res) {
+    fs.readFile('servers.json', function (err, content) {
+        if (err) {
+            res.send(err);
+            console.log(err);
+            return;
+        }
+        else {
+            var serverList = JSON.parse(content);
+            res.send(JSON.stringify(serverList));
+        }
+    });
 });
-
-
-
-
-
 
 
 /* The route for the deployment page to generate the ticket list */
@@ -77,20 +71,29 @@ app.get('/footprints', function (req, res) {
     console.log(req.query.option);
     console.log(req.query.query);
     switch (req.query.option) {
-        case 'Status': searchParameter = 'mrSTATUS'; break;
-        case 'FP Number': searchParameter = 'mrID'; break;
-        case 'Date': searchParameter = 'Target__bDate'; break;
-        case 'Keyword': searchParameter = 'mrTITLE'; break;
-        case '': break;
+        case 'Status':
+            searchParameter = 'mrSTATUS';
+            break;
+        case 'FP Number':
+            searchParameter = 'mrID';
+            break;
+        case 'Date':
+            searchParameter = 'Target__bDate';
+            break;
+        case 'Keyword':
+            searchParameter = 'mrTITLE';
+            break;
+        case '':
+            break;
     }
     console.log(searchParameter);
-    var sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ searchParameter + " like " + "'" + queryString + "' order by mrID desc;";
-    if( searchParameter == 'mrTITLE'){
-        sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where "+ "CONTAINS(mrTITLE,'" + queryString +"') order by mrID desc;";
+    var sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where " + searchParameter + " like " + "'" + queryString + "' order by mrID desc;";
+    if (searchParameter == 'mrTITLE') {
+        sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where " + "CONTAINS(mrTITLE,'" + queryString + "') order by mrID desc;";
     }
-    if( searchParameter == 'Target__bDate') {
+    if (searchParameter == 'Target__bDate') {
         sqlRequest = "select top 100 mrID, mrTITLE, mrSTATUS, Target__bDate  from dbo.MASTER2 where CAST(Target__bDate as date) >= '" + queryString +
-        "' ORDER BY Target__bDate asc";
+            "' ORDER BY Target__bDate asc";
     }
     console.log(sqlRequest);
     var myQuery = request.query(sqlRequest,
@@ -122,7 +125,6 @@ app.get('/tickets', function (req, res) {
             }
         });
 });
-
 
 
 /**************************** EXPORTS ****************************************/

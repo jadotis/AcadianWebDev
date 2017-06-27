@@ -11,7 +11,7 @@ app.controller('tableController', function ($scope, $element, $timeout, $http) {
             $scope.serverList = data.servers;
             $scope.array = [];
             /* Parse the keys for ng-repeat */
-            for(var key in $scope.serverList){
+            for (var key in $scope.serverList) {
                 $scope.array.push($scope.serverList[key]);
             }
             console.log($scope.array);
@@ -21,6 +21,19 @@ app.controller('tableController', function ($scope, $element, $timeout, $http) {
             //success goes here;
         }).error(function (error) {
         console.log(error);
+    });
+    /*Controllers for the Overlay*/
+    $scope.openMenu = function () {
+        document.getElementById("addJSON").style.height = "100%";
+
+    };
+    $scope.closeMenu = function () {
+        document.getElementById("addJSON").style.height = "0%";
+    };
+
+    //captures escape key to close the menu.
+    $(document).keyup(function (e) {
+        if (e.keyCode === 27) $scope.closeMenu();   // esc
     });
 });
 

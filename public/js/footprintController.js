@@ -69,7 +69,5 @@ app.controller('footprintController', function ($scope, $element, $timeout, $htt
             }).error(function (error) {
             console.log(error);
         });
-
-
     }
 });

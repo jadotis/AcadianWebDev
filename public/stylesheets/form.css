@@ -1,7 +1,6 @@
-body{
+body {
     margin: 8px;
 }
-
 
 #errorString {
     color: #D8000C;
@@ -17,15 +16,16 @@ body{
     width: 100%;
     text-overflow-ellipsis: true;
 }
-#webform{
+
+#webform {
     margin-top: 6em;
     height: 80vh;
     padding: .6vmaX;
     background-color: #8a8a8a;
     border-radius: 20px;
-
 }
-#contact_form{
+
+#contact_form {
     padding-bottom: 2vmax;
     border-radius: 10px;
     border: outset #245269;
@@ -33,35 +33,37 @@ body{
     padding: 1vmax;
     height: 100%;
 }
-legend{
+
+legend {
     border-bottom: solid 3px gray;
 }
 
-#successMessage
-{
+#successMessage {
     display: none;
 }
-div.input-group{
+
+div.input-group {
     border-color: #245269;
     border-style: ridge;
     border-radius: 10px;
     width: 25vmax;
     height: 1vmax;
 }
-label.col-md-2.control-label{
+
+label.col-md-2.control-label {
     font-size: 1vmax;
 }
 
-.form-control{
+.form-control {
     padding: 0;
 }
 
-.selectpicker{
+.selectpicker {
     height: 2.25vmax;
     width: 25vmax;
 }
 
-input.form-control{
+input.form-control {
     height: 2.25vmax;
     width: 25vmax;
     padding-left: .5vmax;
@@ -72,9 +74,7 @@ div.form-group {
     width: 50vmax;
 }
 
-
-
-span.input-group-addon{
+span.input-group-addon {
     padding: .55vmax;
     height: 1.5vmax;
     width: 1.5vmax;
