@@ -24,7 +24,7 @@ const conn = new sql.ConnectionPool({
 });
 /* Above contains all parameters and the dependencies for the project */
 
-
+app.use(body_parser.json());
 
 
 
@@ -62,6 +62,22 @@ app.get('/jsonRead', function (req, res) {
     });
 });
 
+app.post('/jsonRecieve', function (req, res) {
+    console.log(req.body);
+    var method = req.body.method;
+    delete req.body["method"];
+    var jsonString = JSON.stringify(req.body);
+
+    console.log(jsonString);
+    if(method == "New Item"){
+        console.log("new item");
+    }
+    else{
+        console.log("Deleting an item");
+    }
+    //var myLastKey =
+
+});
 
 /* The route for the deployment page to generate the ticket list */
 app.get('/footprints', function (req, res) {

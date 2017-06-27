@@ -80,10 +80,45 @@
     <a href="javascript:void(0)" class="closebtn" ng-click="closeMenu();">&times;</a>
     <!-- Overlay content -->
     <div class="overlay-content">
-        <a href="#">Do</a>
-        <a href="#">You</a>
-        <a href="#">Like</a>
-        <a href="#">Webforms?</a>
+        <form id="hiddenForm" class="form-horizontal">
+            <legend>Add/Delete Job from table</legend>
+            <label class="col-sm-5 control-label">Add or Delete:</label>
+            <div class="col-sm-7">
+                <a id="buttondropdown" class="btn btn-primary btn-select">
+                    <input id="method" type="hidden" class="btn-select-input" name="" value=""/>
+                    <span class="btn-select-value">Select an Item</span>
+                    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                    <ul>
+                        <li class="selected">New Item</li>
+                        <li>Delete Item</li>
+                    </ul>
+                </a>
+            </div>
+            <div id="inputBoxes">
+                <label class="col-md-5 control-label">Job Name:</label>
+                <div class="col-md-7">
+                    <input type="text" id="jobName">
+                </div>
+                <label class="col-md-5 control-label">PROD Server:</label>
+                <div class="col-md-7">
+                    <input type="text" id="prodServer">
+                </div>
+                <label class="col-md-5 control-label">UAT Server:</label>
+                <div class="col-md-7">
+                    <input type="text" id="uatServer">
+                </div>
+                <label class="col-md-5 control-label">QA Server:</label>
+                <div class="col-md-7">
+                    <input type="text" id="qaServer">
+                </div>
+                <label class="col-md-5 control-label">DEV Server:</label>
+                <div class="col-md-7">
+                    <input type="text" id="devServer">
+                </div>
+            </div>
+            <button class="btn-primary" id="formSubmit" ng-click="sendJSON();" type="submit">Submit</button>
+
+        </form>
     </div>
 </div>
 <!--Table-->

@@ -9,7 +9,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
 .form-group {
     top: 12rem;
     height: 7vh;
@@ -20,7 +19,6 @@ body {
     left: 0;
 
 }
-
 div.input-group-addon {
     background-color: #0f5279;
     color: gold;
@@ -38,7 +36,6 @@ div.input-group-addon {
     border: solid darkslategray 1px;
     width: 97vw;
 }
-
 .form-group > .input-group > input::placeholder {
     height: 5rem;
     font-size: 3rem;
@@ -124,13 +121,19 @@ td > a {
     background-color: #0f5279;
     border: black 2px solid;
     right: 2rem;
-    color: gold;
+    color: #a88d00;;
 }
 
 .glyphicon-plus-sign {
     font-size: x-large;
+    color: #a88d00;
+}
+
+#Form_Button:hover > .glyphicon-plus-sign, #Form_Button:hover{
+    color: #a88d00;
     color: gold;
 }
+
 
 .overlay {
     margin: 0;
@@ -168,17 +171,131 @@ td > a {
 }
 
 /* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
-
 /* Position the close button (top right corner) */
 .overlay .closebtn {
     position: absolute;
     top: 20px;
     right: 45px;
     font-size: 60px;
+    color: #0f5279;
+}
+.closebtn:hover{
+    color: #818181;
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+#buttondropdown{
+    font-size: medium;
+    color: white;
 
+}
+#buttondropdown>span{
+    border: 1px solid #2e6da4;
+}
+/*This is very important*/
+.btn-primary{
+    border: none;
+}
+.btn-select {
+    position: relative;
+    padding: 0;
+    width: 35%;
+    border-radius: 0;
+    margin-bottom: 100px;
+}
+/*Actual select box*/
+.btn-select .btn-select-value {
+    padding: 6px 12px;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 35px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.btn-select .btn-select-arrow {
+    float: right;
+    line-height: 20px;
+    padding: 7px 9px;
+    top: 0;
+    color: #2e6da4;
+    border-top: 2px solid #2e6da4;
+    border-left: 2px solid #2e6da4;
+    border-bottom: 2px solid #2e6da4;
+}
+
+.btn-select ul {
+    display: none;
+    background-color: white;
+    color: black;
+    clear: both;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 33px;
+    z-index: 999;
+}
+
+.btn-select ul li {
+    padding: 3px 6px;
+    text-align: left;
+}
+
+.btn-select.btn-primary ul li.selected {
+    background-color: #2e6da4;
+    color: white;
+}
+
+.btn-select.btn-primary ul {
+    border: #2e6da4 .5px solid;
+}
+
+.btn-select.btn-primary .btn-select-value {
+    background-color: #428bca;
+}
+
+.btn-select.btn-primary:hover, .btn-select.btn-primary.active {
+    background-color: #286090;
+}
+.btn-select.btn-primary:hover, .btn-select.btn-primary:active, .btn-select.btn-primary.active {
+    border-color: #286090;
+}
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        padding-top: 0 !important;
+    }
+}
+#hiddenForm div >input{
+    float: left;
+    width: 30rem;
+    border: 1px solid #0f5279;
+    height: 3rem;
+}
+
+div.col-md-7 , label.col-md-5{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+legend{
+    border-bottom: 4px solid #0f5279;
+    font-size: 6rem;
+}
+#formSubmit{
+    -webkit-box-shadow: none;
+    background-color: #2e6da4;
+    color: white;
+    width: 10rem;
+    height: 4rem;
+
+    border-radius: 30px;
+}
+#formSubmit:hover{
+    -webkit-box-shadow: none;
+    background-color: #269abc;
+    color: gold;
+    border: gold;
+}
