@@ -18,8 +18,6 @@ These commands can be found at the latter part of the included
 build.ps1 script.
 
 ```
-![Alt text](/public/img/GithubPhoto.PNG?raw=true "Example DB Query and Display")
-
 
 
 
